@@ -1,0 +1,25 @@
+{
+    "name": "mgamal/orders-laravel",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "MG\\Order\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mohamed Gamal",
+            "email": "mg.dev1992@icloud.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MG\\Order\\OrderServiceProvider"
+            ]
+        }
+    }
+}
