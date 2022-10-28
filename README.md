@@ -27,7 +27,7 @@ $order = Order::update($id, $updatedData);
 $order = Order::withUser($userModel);
 
 // Custom Queries
-$ordersList = Order::betweenDates(...$dates);
+$ordersList = Order::betweenDates($from, $to);
 $filteredOrders = Order::filter($criteria);
 
 // Accessing
