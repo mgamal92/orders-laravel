@@ -4,17 +4,18 @@ namespace MG\Order;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
+use MG\Order\Models\Order as OrderModel;
 
 class Order
 {
     public function create(): Model
     {
-        // return
+        return new OrderModel();
     }
 
     public function update(): Model
     {
-
+        return OrderModel::find(1);
     }
 
     /**
