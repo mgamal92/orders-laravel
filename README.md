@@ -8,6 +8,8 @@ This is a package to handle the orders in your Laravel application, you can crea
 3. Send notifications within order lifecycle
 4. Fire events within order lifecycle
 
+You can start from the [issues page](https://github.com/mgamal92/orders-laravel/issues) to work on the feature which you prefer.
+
 ## Installation
 
 ```bash
