@@ -1,15 +1,15 @@
 <?php
 
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOrderItemsTable extends Migration
-{
+return new class extends Migration {
     public function up()
     {
         Schema::create('order_items', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->foreignId('order_id')->constrained();
             $table->morphs('item');
             $table->integer('quantity');
@@ -22,4 +22,4 @@ class CreateOrderItemsTable extends Migration
     {
         Schema::dropIfExists('order_items');
     }
-}
+};
