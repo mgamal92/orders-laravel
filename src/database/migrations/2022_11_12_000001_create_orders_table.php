@@ -4,13 +4,13 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOrdersTable extends Migration
+return new class extends Migration
 {
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->increments('id');
-            $table->foreignId('customer_id')->constrained(config('laravel-order.customers_table'));
+            $table->id();
+            $table->foreignId('user_id')->constrained(config('laravel-order.users_table'));
             $table->float('total')->default('0');
             $table->enum('status', ['initiated', 'in-processing','success', 'failed'])->default('initiated');
             $table->timestamps();
@@ -21,4 +21,4 @@ class CreateOrdersTable extends Migration
     {
         Schema::dropIfExists('orders');
     }
-}
+};
