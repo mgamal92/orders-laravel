@@ -1,4 +1,4 @@
-# Laravel Order
+# Laravel Orders
 
 This is a package to handle the orders in your Laravel application, you can create, update and delete your orders with suitable events. Also you can manage the order lifecycle from being _initiated_ to the _completed_.
 
