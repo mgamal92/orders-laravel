@@ -12,7 +12,7 @@ return new class extends Migration {
             $table->id();
             $table->foreignId('order_id')->constrained();
             $table->morphs('item');
-            $table->integer('quantity');
+            $table->integer('quantity')->default(1);
             $table->float('price');
             $table->timestamps();
         });
