@@ -79,7 +79,7 @@ enum OrderStatus
 ### Events
 
 ```php
-Order::statusUpdate(function (Order $order) {
+Order::statusUpdated(function (Order $order) {
     // Do your work here!
 });
 ```
