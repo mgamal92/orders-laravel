@@ -27,7 +27,7 @@ php artisan vendor:publish --tag=config --provider="MG\LaravelOrder\OrderService
 ```php
 // You can treat the order as normal Laravel model
 $order = Order::create($data);
-$order = Order::update($id, $updatedData);
+$updatedOrder = Order::update($id, $updatedData);
 $order = Order::withUser($userModel);
 
 // Custom Queries
