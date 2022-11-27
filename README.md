@@ -5,8 +5,7 @@ This is a package to handle the orders in your Laravel application, you can crea
 ## Features
 1. Create and Manage your orders easily
 2. See Orders Reports and its Customers
-3. Send notifications within order lifecycle
-4. Fire events within order lifecycle
+3. Fire events within order lifecycle
 
 You can start from the [issues page](https://github.com/mgamal92/orders-laravel/issues) to work on the feature which you prefer.
 
@@ -55,6 +54,17 @@ $order->updateStatus(OrderStatus status)
 $order->updateItems(...$items)
 ```
 
+- Listing Order(s)
+```php
+// Get orders within specific period
+Order::within(...$period);
+
+// Get user orders.
+Order::withUser($userOrUserId); 
+
+//Get order with specific status
+Order::withStatus($status);
+```
 ### Order Status
 
 ```php
@@ -74,7 +84,6 @@ Order::statusUpdate(function (Order $order) {
 });
 ```
 
-### Custom Queries
 
 ### Testing
 Running tests can be done either through composer, or directly calling the PHPUnit binary.
