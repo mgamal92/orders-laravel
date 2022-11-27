@@ -5,10 +5,17 @@ This is a package to handle the orders in your Laravel application, you can crea
 ## Features
 1. Create and Manage your orders easily
 2. See Orders Reports and its Customers
-3. Send notifications within order lifecycle
-4. Fire events within order lifecycle
+3. Fire events within order lifecycle
 
 You can start from the [issues page](https://github.com/mgamal92/orders-laravel/issues) to work on the feature which you prefer.
+
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Testing](#testing)
+- [License](#license)
 
 ## Installation
 
@@ -23,25 +30,66 @@ php artisan vendor:publish --tag=config --provider="MG\LaravelOrder\OrderService
 ```
 
 ## Usage
+- [Manage Orders](#manage-orders)
+- [Order Status](#order-status)
+- [Events](#events)
+- [Custom Queries](#custom-queries)
 
+
+### Manage Orders
+- Create Order
 ```php
-// You can treat the order as normal Laravel model
-$order = Order::create($data);
-$order = Order::update($id, $updatedData);
-$order = Order::withUser($userModel);
-
-// Custom Queries
-$ordersList = Order::betweenDates($from, $to);
-$filteredOrders = Order::filter($criteria);
-
-// Accessing
-$order->items;
-$order->user;
-$order->customer;
-
-// Events
-OrderCreated::dispatch();
-OrderUpdated::dispatch();
-OrderDeleted::dispatch();
+// Create Order
+Order::create(OrderStatus status)
+    ->withUser($user)
+    ->withItems(...$items)
 ```
 
+- Update Order
+```php
+// Update Order Status
+$order->updateStatus(OrderStatus status)
+
+// Update Order Items
+$order->updateItems(...$items)
+```
+
+- Listing Order(s)
+```php
+// Get orders within specific period
+Order::within(...$period);
+
+// Get user orders.
+Order::withUser($userOrUserId); 
+
+//Get order with specific status
+Order::withStatus($status);
+```
+### Order Status
+
+```php
+enum OrderStatus
+{
+    case Initiated;
+    case InProgress;
+    case Completed;
+    case Failed;
+}
+```
+### Events
+
+```php
+Order::statusUpdate(function (Order $order) {
+    // Do your work here!
+});
+```
+
+
+### Testing
+Running tests can be done either through composer, or directly calling the PHPUnit binary.
+```bash
+$ vendor/bin/phpunit test
+```
+
+### License
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
