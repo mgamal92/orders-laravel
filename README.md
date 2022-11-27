@@ -34,6 +34,7 @@ php artisan vendor:publish --tag=config --provider="MG\LaravelOrder\OrderService
 - [Manage Orders](#manage-orders)
 - [Order Status](#order-status)
 - [Events](#events)
+- [Custom Queries](#custom-queries)
 
 
 ### Manage Orders
@@ -72,6 +73,9 @@ Order::statusUpdate(function (Order $order) {
     // Do your work here!
 });
 ```
+
+### Custom Queries
+
 ### Testing
 Running tests can be done either through composer, or directly calling the PHPUnit binary.
 ```bash
