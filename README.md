@@ -10,6 +10,14 @@ This is a package to handle the orders in your Laravel application, you can crea
 
 You can start from the [issues page](https://github.com/mgamal92/orders-laravel/issues) to work on the feature which you prefer.
 
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Testing](#testing)
+- [License](#license)
+
 ## Installation
 
 ```bash
@@ -23,25 +31,52 @@ php artisan vendor:publish --tag=config --provider="MG\LaravelOrder\OrderService
 ```
 
 ## Usage
+- [Manage Orders](#manage-orders)
+- [Order Status](#order-status)
+- [Events](#events)
 
+
+### Manage Orders
+- Create Order
 ```php
-// You can treat the order as normal Laravel model
-$order = Order::create($data);
-$updatedOrder = Order::update($id, $updatedData);
-$order = Order::withUser($userModel);
-
-// Custom Queries
-$ordersList = Order::betweenDates($from, $to);
-$filteredOrders = Order::filter($criteria);
-
-// Accessing
-$order->items;
-$order->user;
-$order->customer;
-
-// Events
-OrderCreated::dispatch();
-OrderUpdated::dispatch();
-OrderDeleted::dispatch();
+// Create Order
+Order::create(OrderStatus status)
+    ->withUser($user)
+    ->withItems(...$items)
 ```
 
+- Update Order
+```php
+// Update Order Status
+$order->updateStatus(OrderStatus status)
+
+// Update Order Items
+$order->updateItems(...$items)
+```
+
+### Order Status
+
+```php
+enum OrderStatus
+{
+    case Initiated;
+    case InProgress;
+    case Completed;
+    case Failed;
+}
+```
+### Events
+
+```php
+Order::statusUpdate(function (Order $order) {
+    // Do your work here!
+});
+```
+### Testing
+Running tests can be done either through composer, or directly calling the PHPUnit binary.
+```bash
+$ vendor/bin/phpunit test
+```
+
+### License
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
