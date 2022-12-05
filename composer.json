@@ -16,6 +16,9 @@
         "php": "^8.1",
         "spatie/laravel-model-states": "^2.4"
     },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
     "extra": {
         "laravel": {
             "providers": [
