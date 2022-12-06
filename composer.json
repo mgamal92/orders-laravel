@@ -14,11 +14,11 @@
     ],
     "require": {
         "php": "^8.1",
-        "spatie/laravel-model-states": "^2.4",
-        "friendsofphp/php-cs-fixer": "^3.13"
+        "spatie/laravel-model-states": "^2.4"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-latest"
+        "roave/security-advisories": "dev-latest",
+        "friendsofphp/php-cs-fixer": "^3.13"
     },
     "extra": {
         "laravel": {
