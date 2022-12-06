@@ -17,6 +17,9 @@
         "spatie/laravel-model-states": "^2.4",
         "friendsofphp/php-cs-fixer": "^3.13"
     },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
     "extra": {
         "laravel": {
             "providers": [
