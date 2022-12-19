@@ -1,4 +1,4 @@
-name: Format (PHP)
+name: CS Fixer
 
 on:
   push:
