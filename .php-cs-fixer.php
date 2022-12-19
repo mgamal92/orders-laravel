@@ -5,6 +5,7 @@ use PhpCsFixer\Finder;
 
 $rules = [
     '@PSR12' => true,
+    '@PHP81Migration' => true,
     'array_syntax' => ['syntax' => 'short'],
     'ordered_imports' => ['sort_algorithm' => 'alpha'],
     'phpdoc_order' => true,
