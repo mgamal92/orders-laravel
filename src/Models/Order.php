@@ -14,7 +14,7 @@ class Order extends ModelAlias
         'id',
         'user_id',
         'total',
-        'status'
+        'status',
     ];
 
     public function items(): HasMany
