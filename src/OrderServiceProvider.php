@@ -1,4 +1,5 @@
 <?php
+
 namespace MG\Order;
 
 use Illuminate\Support\ServiceProvider;

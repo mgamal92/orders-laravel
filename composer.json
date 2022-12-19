@@ -1,29 +1,38 @@
 {
-    "name": "mgamal/orders-laravel",
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "MG\\Order\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Mohamed Gamal",
-            "email": "mg.dev1992@icloud.com"
-        }
-    ],
-    "require": {
-        "php": "^8.1",
-        "spatie/laravel-model-states": "^2.4"
-    },
-    "require-dev": {
-        "roave/security-advisories": "dev-latest"
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "MG\\Order\\OrderServiceProvider"
-            ]
-        }
+  "name": "mgamal/orders-laravel",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "MG\\Order\\": "src/"
     }
+  },
+  "authors": [
+    {
+      "name": "Mohamed Gamal",
+      "email": "mg.dev1992@icloud.com"
+    }
+  ],
+  "require": {
+    "php": "^8.1",
+    "spatie/laravel-model-states": "^2.4"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "friendsofphp/php-cs-fixer": "^3.13"
+  },
+  "scripts": {
+    "fix-style": [
+      "./vendor/bin/php-cs-fixer fix -vvv --diff --show-progress=dots"
+    ],
+    "check-style": [
+      "./vendor/bin/php-cs-fixer fix -vvv --diff --dry-run --show-progress=dots"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "MG\\Order\\OrderServiceProvider"
+      ]
+    }
+  }
 }
